@@ -1,6 +1,7 @@
 import React from "react";
 import FancyBorder from "./FancyBorder";
 import "./App.css";
+import Hello from './Hello';
 
 
 // Context API
@@ -65,6 +66,9 @@ function Grid(props) {
   );
 }
 
+
+
+
 export default function App() {
   return (
     <div className="App">
@@ -82,6 +86,7 @@ export default function App() {
       <MyContext.Provider value={theme}>
         <Toolbar />
       </MyContext.Provider>
+      <Hello name="Patryk" />
     </div>
   );
 }
