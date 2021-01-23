@@ -2,6 +2,7 @@ import React from "react";
 import FancyBorder from "./FancyBorder";
 import "./App.css";
 import Hello from './Hello';
+import Users from './Users';
 
 
 // Context API
@@ -73,8 +74,7 @@ export default function App() {
   return (
     <div className="App">
       <FancyBorder color="blue">
-        <h1>Hello CodeSandbox</h1>
-        <h2>Start editing to see some magic happen!</h2>
+        <h2 style={{backgroundColor:"grey"}}>1. Composition</h2>
         <SpitPane
           up={<FancyBorder color="red">Hello</FancyBorder>}
           bottom={<h1>Hello</h1>}
@@ -83,10 +83,14 @@ export default function App() {
        left={<p style={{marginRight:"200px", color:"red"}}>Anna</p>}
        right={<p style={{marginLeft:"200px", color:"blue"}}>Patryk</p>}/>
       </FancyBorder>
+      <h2 style={{backgroundColor:"grey"}}>2. Context API</h2>
       <MyContext.Provider value={theme}>
         <Toolbar />
       </MyContext.Provider>
+      <h2 style={{backgroundColor:"grey"}}>3. Higher Order Component</h2>
       <Hello name="Patryk" />
+      <h2 style={{backgroundColor:"grey"}}>4. Separation state and view</h2>
+      <Users/>
     </div>
   );
 }
