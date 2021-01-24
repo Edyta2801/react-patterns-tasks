@@ -4,6 +4,9 @@ import Input from "../Input";
 import Button from "../Button";
 
 class Chat extends Component {
+  static Messages = Messages;
+  static Input = Input;
+  static Button = Button;
   state = {
     currentMessage: "",
     messages: []
@@ -31,12 +34,26 @@ class Chat extends Component {
 
   render() {
     const { currentMessage, messages } = this.state;
+    const { updateCurrentMessage, add } = this;
+    const { children } = this.props;
     return (
       <div>
         <h1>Chatroom</h1>
-        <Messages messages={messages} />
-        <Input value={currentMessage} onChange={this.updateCurrentMessage} />
-        <Button onClick={this.add} />
+        {React.Children.map(children, child => {
+          if (child.type.displayName === "Input") {
+            return React.cloneElement(child, {
+              value: currentMessage,
+              onChange: updateCurrentMessage
+            });
+          }
+          if (child.type.displayName === "Messages") {
+            return React.cloneElement(child, { messages });
+          }
+          if (child.type.displayName === "Button") {
+            return React.cloneElement(child, { onClick: add });
+          }
+          return child;
+        })}
       </div>
     );
   }

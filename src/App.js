@@ -92,8 +92,12 @@ export default function App() {
       <Hello name="Patryk" />
       <h2 style={{backgroundColor:"grey"}}>4. Separation state and view</h2>
       <Users/>
-      <h2 style={{backgroundColor:"grey"}}>5. Compound-component before</h2>
-      <Chat />
+      <h2 style={{backgroundColor:"grey"}}>5. Compound-component after</h2>
+      <Chat>
+          <Chat.Messages />
+          <Chat.Input />
+          <Chat.Button />
+        </Chat>
     </div>
   );
 }

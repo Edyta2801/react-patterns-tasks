@@ -16,4 +16,6 @@ function Messages({ messages }) {
   );
 }
 
+Messages.displayName = "Messages";
+
 export default Messages;
