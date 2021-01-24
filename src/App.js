@@ -3,6 +3,7 @@ import FancyBorder from "./FancyBorder";
 import "./App.css";
 import Hello from './Hello';
 import Users from './Users';
+import Chat from './Chat';
 
 
 // Context API
@@ -91,6 +92,8 @@ export default function App() {
       <Hello name="Patryk" />
       <h2 style={{backgroundColor:"grey"}}>4. Separation state and view</h2>
       <Users/>
+      <h2 style={{backgroundColor:"grey"}}>5. Compound-component before</h2>
+      <Chat />
     </div>
   );
 }
