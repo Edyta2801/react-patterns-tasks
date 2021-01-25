@@ -4,6 +4,7 @@ import "./App.css";
 import Hello from './Hello';
 import Users from './Users';
 import Chat from './Chat';
+import WindowSize from './WindowSize';
 
 
 // Context API
@@ -98,6 +99,8 @@ export default function App() {
           <Chat.Input />
           <Chat.Button />
         </Chat>
+        <h2 style={{backgroundColor:"grey"}}>6. Własne hooki</h2>
+        <WindowSize/>
     </div>
   );
 }
