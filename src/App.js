@@ -8,6 +8,8 @@ import Users from './Users';
 import Chat from './Chat';
 import WindowSize from './WindowSize';
 import UsersContainer from './UsersContainer';
+import UsersCards from './UsersCards';
+import UsersTable from './UsersTable';
 
 
 // Context API
@@ -115,8 +117,17 @@ function Grid(props) {
         <h2 style={{backgroundColor:"grey"}}>6. Własne hooki</h2>
         <WindowSize/>
         <h2 style={{backgroundColor:"grey"}}>7. Render props</h2>
-    <button onclick={this.handleViewChange}>change view</button>
-    <UsersContainer cardView={cardView}/>
+        <button onClick={this.handleViewChange}>change view</button>
+        <UsersContainer
+          cardView={cardView}
+          render={({ users }) =>
+            cardView === true ? (
+              <UsersCards users={users} />
+            ) : (
+              <UsersTable users={users} />
+            )
+          }
+        />
     </div>
   );
 }

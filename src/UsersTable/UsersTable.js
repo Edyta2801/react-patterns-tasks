@@ -5,8 +5,10 @@ function UsersTable({ users }) {
     <div>
       <table>
         <thead>
-          <th>Name</th>
-          <th>Surname</th>
+          <tr>
+            <th>Name</th>
+            <th>Surname</th>
+          </tr>
         </thead>
         <tbody>
           {users.map(user => (

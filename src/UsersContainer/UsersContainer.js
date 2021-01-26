@@ -1,6 +1,4 @@
-import React, { Component } from "react";
-import UsersTable from "../UsersTable";
-import UsersCards from "../UsersCards";
+import { Component } from "react";
 
 class UsersContainer extends Component {
   state = {
@@ -14,12 +12,8 @@ class UsersContainer extends Component {
   }
   render() {
     const { users } = this.state;
-    const {cardView}=this.props;
-    return (
-      <div>
-       {cardView===true ? <UsersCards users={users}/> : <UsersTable users={users}/>}
-      </div>
-    );
+
+    return this.props.render({ users });
   }
 }
 
