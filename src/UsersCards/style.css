@@ -1,0 +1,19 @@
+.users {
+    border: #000 1px solid;
+    padding: 4px;
+  }
+  
+  .users__user {
+    border: #000 1px solid;
+    margin: 10px;
+    padding: 4px;
+  }
+  
+  .users__name {
+    font-size: 26px;
+    font-weight: bold;
+  }
+  
+  .users__surname {
+    font-size: 18px;
+  }

@@ -1,10 +1,13 @@
-import React from "react";
+import React,
+{Component}
+ from "react";
 import FancyBorder from "./FancyBorder";
 import "./App.css";
 import Hello from './Hello';
 import Users from './Users';
 import Chat from './Chat';
 import WindowSize from './WindowSize';
+import UsersContainer from './UsersContainer';
 
 
 // Context API
@@ -72,7 +75,17 @@ function Grid(props) {
 
 
 
-export default function App() {
+// export default function App() {
+  export default class App extends Component{
+    state={
+      cardView:false
+
+    };
+    handleViewChange=()=>{
+      this.setState({cardView:!this.state.cardView});
+    };
+    render(){
+      const{cardView}=this.state;
   return (
     <div className="App">
       <FancyBorder color="blue">
@@ -101,6 +114,10 @@ export default function App() {
         </Chat>
         <h2 style={{backgroundColor:"grey"}}>6. Własne hooki</h2>
         <WindowSize/>
+        <h2 style={{backgroundColor:"grey"}}>7. Render props</h2>
+    <button onclick={this.handleViewChange}>change view</button>
+    <UsersContainer cardView={cardView}/>
     </div>
   );
 }
+  }
